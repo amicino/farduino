@@ -1,21 +1,23 @@
 #include <stdio.h>
 #include <unistd.h>
 
-void loop() {
+void my_loop() {
     printf("%s(): is called\n",__FUNCTION__);
+    loop();
 }
 
-void setup() {
+void my_setup() {
     printf("%s(): is called\n", __FUNCTION__);
+    setup();
 }
 
 int main(void) {
     int is_powered=1;
 
     while(is_powered) {
-        setup();
+        my_setup();
         while(1) {
-            loop();
+            my_loop();
             sleep(1);
         }
     }
