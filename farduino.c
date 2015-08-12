@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <unistd.h>
 
 void my_loop() {
     printf("%s(): is called\n",__FUNCTION__);

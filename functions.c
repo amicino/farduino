@@ -1,5 +1,3 @@
-#include "functions.h"
-
 #include <stdio.h>
 
 void digitalWrite(int pin, int mode) {

@@ -1,4 +1,3 @@
-#include "constants.h"
-#include "functions.h"
+#include <Arduino.h>
 
 #include "samples/pinMode.c"
