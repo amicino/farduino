@@ -1,15 +1,25 @@
 #include <stdio.h>
 
 #define NUM_PINS 14
-static int digital_pins[NUM_PINS] = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+
+struct pin {
+    int level;
+    int mode;
+};
+
+
+static struct pin digital_pins[NUM_PINS];
+
 void display_digital_pins() {
+    printf("digital pins:\n");
     for(int i=0;i < NUM_PINS;i++) {
-        printf("digital_pins[%d]=%d\n", i, digital_pins[i]);
+        printf("\t[%d]{level=%d, mode=%d}\n", i, digital_pins[i].level, digital_pins[i].mode);
     }
+    printf("\n");
 }
 
 void pinMode(uint8_t pin, uint8_t level) {
-    digital_pins[pin] = level;
+    digital_pins[pin].level = level;
     printf("%s(pin=%d, level=%d): is called\n", __FUNCTION__, pin, level);
 }
 
@@ -19,7 +29,7 @@ void digitalWrite(uint8_t pin, uint8_t mode){
 
 int digitalRead(uint8_t pin){
     int rc=42;
-    printf("%s(pin=%d, rc=%d): is called\n", __FUNCTION__, pin, rc);
+    printf("%s(pin=%d, rc=%d): is called\n", __FUNCTION__, pin, digital_pins[pin].mode);
     return rc;
 }
 
