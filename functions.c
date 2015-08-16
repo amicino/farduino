@@ -1,6 +1,15 @@
 #include <stdio.h>
 
+#define NUM_PINS 14
+static int digital_pins[NUM_PINS] = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+void display_digital_pins() {
+    for(int i=0;i < NUM_PINS;i++) {
+        printf("digital_pins[%d]=%d\n", i, digital_pins[i]);
+    }
+}
+
 void pinMode(uint8_t pin, uint8_t level) {
+    digital_pins[pin] = level;
     printf("%s(pin=%d, level=%d): is called\n", __FUNCTION__, pin, level);
 }
 

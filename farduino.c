@@ -1,4 +1,7 @@
+#include <Arduino.h>
+#include "functions.h"
 #include <stdio.h>
+#include <unistd.h>
 
 void my_loop() {
     printf("%s(): is called\n",__FUNCTION__);
@@ -17,7 +20,8 @@ int main(void) {
         my_setup();
         while(1) {
             my_loop();
-            sleep(1);
+            display_digital_pins();
+            sleep(2);
         }
     }
 }
