@@ -13,7 +13,7 @@ static struct pin digital_pins[NUM_PINS];
 void display_digital_pins() {
     printf("digital pins:\n");
     for(int i=0;i < NUM_PINS;i++) {
-        printf("\t[%d]{level=%d, mode=%d}\n", i, digital_pins[i].level, digital_pins[i].mode);
+        printf("\t[%02d]{level=%d, mode=%d}\n", i, digital_pins[i].level, digital_pins[i].mode);
     }
     printf("\n");
 }
