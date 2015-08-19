@@ -1,7 +1,7 @@
 Simple fake arduino
 
-    ```bash
-    make
-    ./farduino
-    (Control-C to break)
-    ```
+```shell
+make
+./farduino
+(Control-C to break)
+```
